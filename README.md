@@ -8,8 +8,8 @@
  - [x] Поразрядные операции
  - [x] Операции присваивания
  - [x] Преобразования базовых типов данных
- - ![img.png](img.png)
- - ![img_1.png](img_1.png)
+ - ![img.png](C:\Users\luzin\source\repos\C#\MyFirstProgram\img.png)
+ - ![img_1.png](C:\Users\luzin\source\repos\C#\MyFirstProgram\img_1.png)
  - [ ] Условные выражения
  - [ ] Конструкция if...else и тернарная операция
  - [ ] Циклы

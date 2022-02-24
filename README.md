@@ -9,7 +9,7 @@
  - [x] Операции присваивания
  - [x] Преобразования базовых типов данных
  ![image](https://user-images.githubusercontent.com/53607329/155455623-5efeeaf4-5013-4727-a106-b789f5c33825.png)
- - ![img_1.png](C:\Users\luzin\source\repos\C#\MyFirstProgram\img_1.png)
+ ![image](https://user-images.githubusercontent.com/53607329/155455662-b2ef2f4a-fd79-40c8-9c8b-022187e2595b.png)
  - [ ] Условные выражения
  - [ ] Конструкция if...else и тернарная операция
  - [ ] Циклы

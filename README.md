@@ -8,7 +8,7 @@
  - [x] Поразрядные операции
  - [x] Операции присваивания
  - [x] Преобразования базовых типов данных
- - ![img.png](C:\Users\luzin\source\repos\C#\MyFirstProgram\img.png)
+ ![image](https://user-images.githubusercontent.com/53607329/155455623-5efeeaf4-5013-4727-a106-b789f5c33825.png)
  - ![img_1.png](C:\Users\luzin\source\repos\C#\MyFirstProgram\img_1.png)
  - [ ] Условные выражения
  - [ ] Конструкция if...else и тернарная операция

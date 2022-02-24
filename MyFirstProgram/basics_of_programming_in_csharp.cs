@@ -208,3 +208,63 @@ foreach(char symbol in "Tom")// или var
 }
 // break - exit the loop without waiting for it to complete
 // continue - skip the current iteration and go to the next one
+//[][][][][][][][][][][][][][][][][][][][][][][][][][]МАССИВЫ[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+int[] nums2 = new int[4] { 1, 2, 3, 5 };
+int[] nums3 = new int[] { 1, 2, 3, 5 };
+int[] nums4 = new[] { 1, 2, 3, 5 };
+int[] nums5 = { 1, 2, 3, 5 };
+//  Длина массива - метод Length
+Console.WriteLine(nums2.Length);
+//Получение элементов с конца массива ->>> '^'
+Console.WriteLine(nums2[^1]);//5
+// Ранг - rank - количество измерений массива
+// Длина измерения - dimention length - длина отдельного измерения массива
+// Длина массива - array length - количество всех элементов массива
+int[,] numbers = { { 1, 2, 3 }, { 4, 5, 6 }};
+// GetUpperBound(dimension) возвращает Индекс последнего элемента указанного измерения в массиве
+// или GetLength(dimension) возвращает кол-во элементов в заданном измерении массива
+int rows = numbers.GetUpperBound(0) + 1;    // количество строк
+int columns = numbers.Length / rows;        // количество столбцов
+// МАССИВ МАССИВОВ - ЗУБЧАТЫЕ МАССИВЫ
+int[][] numbers1 = { 
+    new int[] { 1, 2 }, 
+    new int[] { 1, 2, 3 }, 
+    new int[] { 1, 2, 3, 4, 5 } 
+};
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%МЕТОДЫ%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// [modifiers] return_type method_name([parameters]) { method_body }
+// Важное отличие - объявление или определение метода перед его вызовом - необязательно. Порядок не важен!!!
+// Сокращение определения метода с помощью '=>'
+void SayHello() => Console.WriteLine("Hello");
+// формальные параметры - параметры метода
+// фактические параметры - значения, которые передаются формальным параметрам - аргументы метода
+// доступно неявное преобразование типов при передаче параметров
+// параметры по-умолчанию - как в с++: после необязательных параметров все последующие параметры также должны быть необязательными
+// Новое: именованые параметры
+void PrintPerson(string name, int age = 1, string company = "Undefined") => Console.WriteLine($"Name: {name}  Age: {age}  Company: {company}");
+PrintPerson("Tom", company:"Microsoft", age: 37);  // Name: Tom  Age: 37  Company: Microsoft
+PrintPerson(age:41, name: "Bob");                  // Name: Bob  Age: 41  Company: Undefined
+PrintPerson(company:"Google", name:"Sam");         // Name: Sam  Age: 1   Company: Google
+// Сокращённая версия методов с результатом
+string GetMessage() => "hello"; // эквивалентно: string GetMessage() { return "hello"; }
+int Sum(int x, int y) => x + y; // int Sum(int x, int y) { return x + y; }
+// Передача по ссылке - модификатор ref
+void Increment(ref int n)
+{
+    n++;
+    Console.WriteLine($"Число в методе Increment: {n}");
+}
+int number = 5;
+Increment(ref number);
+Console.WriteLine($"Число после метода Increment: {number}");
+// Выходные параметры - модификатор out
+// Входные параметры - модификатор in - аналог - const Type& valuable - read_only
+void GetRectangleData(in int width, in int height, out int rectArea, out int rectPerimetr)
+{
+    //width = 25; // нельзя изменить, так как width - входной параметр
+    rectArea = width * height;      
+    rectPerimetr = (width + height) * 2;
+}
+int w = 10;
+int h = 20;
+GetRectangleData(w, h, out var area, out var perimetr);

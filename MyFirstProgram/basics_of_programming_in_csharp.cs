@@ -268,3 +268,50 @@ void GetRectangleData(in int width, in int height, out int rectArea, out int rec
 int w = 10;
 int h = 20;
 GetRectangleData(w, h, out var area, out var perimetr);
+// МАССИВ ПАРАМЕТРОВ
+// после параметра с модификатором params мы НЕ можем указывать другие параметры
+// Объявленный тип параметра params должен быть одномерным массивом.
+void Psum(params int[]  numbers)
+{
+    int result = 0;
+    foreach (var n in numbers)
+    {
+        result += n;
+    }
+    Console.WriteLine(result);
+}
+ 
+int[] nums = { 1, 2, 3, 4, 5};
+Psum(nums);
+Psum(1, 2, 3, 4);
+Psum(1, 2, 3);
+Psum();
+
+// ЛОКАЛЬНЫЕ ФУНКЦИИ
+// функции с ключевым словом static не могут обращаться к переменным окружения
+// фичи свича
+int DoSOperation(int op, int a, int b) => op switch
+{
+    1 => a + b,
+    2 => a - b,
+    3 => a * b,
+    _ => 0
+};
+int DoOperation(int op, int a, int b)
+{
+    return op switch
+    {
+        1 => a + b,
+        2 => a - b,
+        3 => a * b,
+        _ => 0
+    };
+}
+//ПЕРЕЧИСЛЕНИЯ enum
+enum DayTime : byte//byte, sbyte, short, ushort, int, uint, long, ulong
+{
+    Morning = 1,
+    Afternoon = Morning,
+    Evening = 2,
+    Night = 2
+}
